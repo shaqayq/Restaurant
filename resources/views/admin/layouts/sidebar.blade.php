@@ -30,7 +30,7 @@
               <ul class="menu-sub">
                 <li class="menu-item active">
                   <a href="dashboards-analytics.html" class="menu-link">
-                    <div data-i18n="Analytics">Analytics</div>
+                    <div data-i18n="Analytics">ABC</div>
                   </a>
                 </li>
                 <li class="menu-item">
