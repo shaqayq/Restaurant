@@ -13,6 +13,8 @@
               <li data-filter=".filter-starters">Starters</li>
               <li data-filter=".filter-salads">Salads</li>
               <li data-filter=".filter-specialty">Specialty</li>
+              <li data-filter=".filter-specialty">Frozen Food</li>
+
             </ul>
           </div>
         </div>
