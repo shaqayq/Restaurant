@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::get('/adminPanel', function () {
     return view('admin.homePage');
 });
+
+// routes/web.php
+
+Route::get('/open-popup', 'PopupController@openPopup')->name('open.popup');
+

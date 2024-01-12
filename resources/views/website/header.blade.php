@@ -14,7 +14,10 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Order</a>
+      <div data-bs-target="#exampleModalToggle2">
+      <a href="" class="book-a-table-btn scrollto d-none d-lg-flex ">Card</a>
+      </div>
+     <!-- class="modal-dialog modal-dialog-centered" -->
 
     </div>
   </header>
