@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DriverController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/adminPanel', function () {
     return view('admin.homePage');
 });
+Route::resource('/driver', DriverController::class);
 
 // routes/web.php
 

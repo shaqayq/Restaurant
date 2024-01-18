@@ -58,7 +58,7 @@
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
 
           <div class="col-lg-6 menu-item filter-starters">
-            <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
+            <img src="assets/admin/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
             <div class="menu-content">
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Lobster Bisque</a><span>$5.95</span>
@@ -74,7 +74,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
-            <img src="assets/img/menu/bread-barrel.jpg" class="menu-img" alt="">
+            <img src="assets/admin/img/menu/bread-barrel.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Bread Barrel</a>
               <br><span><b>$6.95</b></span>
@@ -85,7 +85,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-starters">
-            <img src="assets/img/menu/cake.jpg" class="menu-img" alt="">
+            <img src="assets/admin/img/menu/cake.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Crab Cake</a><span>$7.95</span>
             </div>
@@ -95,7 +95,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-salads">
-            <img src="assets/img/menu/caesar.jpg" class="menu-img" alt="">
+            <img src="assets/admin/img/menu/caesar.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Caesar Selections</a><span>$8.95</span>
             </div>
@@ -105,7 +105,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
-            <img src="assets/img/menu/tuscan-grilled.jpg" class="menu-img" alt="">
+            <img src="assets/admin/img/menu/tuscan-grilled.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Tuscan Grilled</a><span>$9.95</span>
             </div>
@@ -115,7 +115,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-starters">
-            <img src="assets/img/menu/mozzarella.jpg" class="menu-img" alt="">
+            <img src="assets/admin/img/menu/mozzarella.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Mozzarella Stick</a><span>$4.95</span>
             </div>
@@ -125,7 +125,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-salads">
-            <img src="assets/img/menu/greek-salad.jpg" class="menu-img" alt="">
+            <img src="assets/admin/img/menu/greek-salad.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Greek Salad</a><span>$9.95</span>
             </div>
@@ -135,7 +135,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-salads">
-            <img src="assets/img/menu/spinach-salad.jpg" class="menu-img" alt="">
+            <img src="assets/admin/img/menu/spinach-salad.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Spinach Salad</a><span>$9.95</span>
             </div>
@@ -145,7 +145,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
-            <img src="assets/img/menu/lobster-roll.jpg" class="menu-img" alt="">
+            <img src="assets/admin/img/menu/lobster-roll.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Lobster Roll</a>
               <span>$12.95</span>
@@ -172,10 +172,10 @@
       </div>
       <div class="modal-body">
           <div class="items model-head">
-            <img src="assets/img/menu/lobster-roll.jpg" class="menu-img" alt="">
+            <img src="assets/admin/img/menu/lobster-roll.jpg" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Lobster Roll</a>
-              <br><span><b>$6.95</b></span>
+              <br><span id="price"><b>$6.95</b></span>
             </div>
             <div class="menu-ingredients">
               Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
@@ -184,9 +184,9 @@
           <div class="items quantity">
             <p>Quantity:</p>
             <div class="number">
-              <i class="fa fa-minus"></i>
-              <input type="number" class="" value="1">
-              <i class="fa fa-plus"></i>
+            <i class="fa fa-minus" id="decrease"></i>
+              <input type="number" class="" value="1" id="quantityInput">
+              <i class="fa fa-plus" id="increase"></i>
             </div>
           </div>
           <div class="comment">
@@ -196,8 +196,45 @@
       </div>
       <div class="modal-footer">
         
-        <button type="button" class="btn btn-warning btn-block">Add to card => $6.95</button>
+        <button type="button" class="btn btn-warning btn-block" id="addToCartBtn" >
+          Add to card => <span id = "total"></span></button>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the input, buttons, span, and button
+    var quantityInput = document.getElementById('quantityInput');
+    var increaseButton = document.getElementById('increase');
+    var decreaseButton = document.getElementById('decrease');
+    var priceSpan = document.getElementById('price');
+    var addToCartBtn = document.getElementById('addToCartBtn');
+
+    // Initial price value
+    var originalPrice = 6.95;
+
+    // Add click event listener for increase button
+    increaseButton.addEventListener('click', function () {
+      quantityInput.value = parseInt(quantityInput.value, 10) + 1;
+      updatePrice();
+    });
+
+    // Add click event listener for decrease button
+    decreaseButton.addEventListener('click', function () {
+      // Ensure the quantity is not less than 1
+      if (parseInt(quantityInput.value, 10) > 1) {
+        quantityInput.value = parseInt(quantityInput.value, 10) - 1;
+        updatePrice();
+      }
+    });
+
+    // Function to update price and button text
+    function updatePrice() {
+      var totalPrice = originalPrice * parseInt(quantityInput.value, 10);
+      
+      addToCartBtn.innerHTML = 'Add to cart => $' + totalPrice.toFixed(2);
+    }
+  });
+</script>
