@@ -1,279 +1,204 @@
 @extends('admin.layouts.app')
 @section('content')
-
-      <div class="row">
-         <div class="col-lg-8 mb-4 order-0">
-            <div class="card">
-               <div class="d-flex align-items-end row">
-                  <div class="col-sm-7">
-                     <div class="card-body">
-                        <h5 class="card-title text-primary">
-                           Congratulations John! 🎉
-                        </h5>
-                        <p class="mb-4">
-                           You have done <span class="fw-bold">72%</span> more
-                           sales today. Check your new badge in your profile.
-                        </p>
-                        <a
-                           href="javascript:;"
-                           class="btn btn-sm btn-label-primary"
-                           >View Badges</a
-                           >
-                     </div>
-                  </div>
-                  <div class="col-sm-5 text-center text-sm-left">
-                     <div class="card-body pb-0 px-0 px-md-4">
-                        <img
-                           src="assets/admin/img/illustrations/man-with-laptop-light.png"
-                           height="140"
-                           alt="View Badge User"
-                           data-app-dark-img="illustrations/man-with-laptop-dark.png"
-                           data-app-light-img="illustrations/man-with-laptop-light.png"
-                           />
-                     </div>
-                  </div>
+<div class="container">
+   <div class="row">
+      <div class="col-lg-3 col-md-6">
+         <div class="card-box">
+            <div class="dropdown pull-right">
+               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+               <i class="zmdi zmdi-more-vert"></i>
+               </a>
+               <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+               </ul>
+            </div>
+            <h4 class="header-title m-t-0 m-b-30">Total Revenue</h4>
+            <div class="widget-chart-1">
+               <div class="widget-chart-box-1">
+                  <input data-plugin="knob" data-width="80" data-height="80" data-fgColor="#f05050 "
+                     data-bgColor="#F9B9B9" value="58"
+                     data-skin="tron" data-angleOffset="180" data-readOnly=true
+                     data-thickness=".15"/>
+               </div>
+               <div class="widget-detail-1">
+                  <h2 class="p-t-10 m-b-0"> 256 </h2>
+                  <p class="text-muted">Revenue today</p>
                </div>
             </div>
          </div>
-         <div class="col-lg-4 col-md-4 order-1">
-            <div class="row">
-               <div class="col-lg-6 col-md-12 col-6 mb-4">
-                  <div class="card">
-                     <div class="card-body pb-0">
-                        <span class="d-block fw-semibold mb-1">Order</span>
-                        <h3 class="card-title mb-1">276k</h3>
-                     </div>
-                     <div id="orderChart" class="mb-3"></div>
-                  </div>
-               </div>
-               <div class="col-lg-6 col-md-12 col-6 mb-4">
-                  <div class="card">
-                     <div class="card-body">
-                        <div
-                           class="card-title d-flex align-items-start justify-content-between"
-                           >
-                           <div class="avatar flex-shrink-0">
-                              <img
-                                 src="assets/admin/img/icons/unicons/wallet-info.png"
-                                 alt="Credit Card"
-                                 class="rounded"
-                                 />
-                           </div>
-                           <div class="dropdown">
-                              <button
-                                 class="btn p-0"
-                                 type="button"
-                                 id="cardOpt6"
-                                 data-bs-toggle="dropdown"
-                                 aria-haspopup="true"
-                                 aria-expanded="false"
-                                 >
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                              </button>
-                              <div
-                                 class="dropdown-menu dropdown-menu-end"
-                                 aria-labelledby="cardOpt6"
-                                 >
-                                 <a
-                                    class="dropdown-item"
-                                    href="javascript:void(0);"
-                                    >View More</a
-                                    >
-                                 <a
-                                    class="dropdown-item"
-                                    href="javascript:void(0);"
-                                    >Delete</a
-                                    >
-                              </div>
-                           </div>
-                        </div>
-                        <span>Sales</span>
-                        <h3 class="card-title text-nowrap mb-1">$4,679</h3>
-                        <small class="text-success fw-semibold"
-                           ><i class="bx bx-up-arrow-alt"></i> +28.42%</small
-                           >
-                     </div>
-                  </div>
-               </div>
+      </div>
+      <!-- end col -->
+      <div class="col-lg-3 col-md-6">
+         <div class="card-box">
+            <div class="dropdown pull-right">
+               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+               <i class="zmdi zmdi-more-vert"></i>
+               </a>
+               <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+               </ul>
             </div>
-         </div>
-         <!-- Total Revenue -->
-         <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
-            <div class="card">
-               <div class="row row-bordered g-0">
-                  <div class="col-md-8">
-                     <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
-                     <div id="totalRevenueChart" class="px-2"></div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="card-body">
-                        <div class="text-center">
-                           <div class="dropdown">
-                              <button
-                                 class="btn btn-sm btn-label-primary dropdown-toggle"
-                                 type="button"
-                                 id="growthReportId"
-                                 data-bs-toggle="dropdown"
-                                 aria-haspopup="true"
-                                 aria-expanded="false"
-                                 >
-                              2022
-                              </button>
-                              <div
-                                 class="dropdown-menu dropdown-menu-end"
-                                 aria-labelledby="growthReportId"
-                                 >
-                                 <a
-                                    class="dropdown-item"
-                                    href="javascript:void(0);"
-                                    >2021</a
-                                    >
-                                 <a
-                                    class="dropdown-item"
-                                    href="javascript:void(0);"
-                                    >2020</a
-                                    >
-                                 <a
-                                    class="dropdown-item"
-                                    href="javascript:void(0);"
-                                    >2019</a
-                                    >
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div id="growthChart"></div>
-                     <div class="text-center fw-semibold pt-3 mb-2">
-                        62% Company Growth
-                     </div>
-                     <div
-                        class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between"
-                        >
-                        <div class="d-flex">
-                           <div class="me-2">
-                              <span class="badge bg-label-primary p-2"
-                                 ><i class="bx bx-dollar text-primary"></i
-                                 ></span>
-                           </div>
-                           <div class="d-flex flex-column">
-                              <small>2022</small>
-                              <h6 class="mb-0">$32.5k</h6>
-                           </div>
-                        </div>
-                        <div class="d-flex">
-                           <div class="me-2">
-                              <span class="badge bg-label-info p-2"
-                                 ><i class="bx bx-wallet text-info"></i
-                                 ></span>
-                           </div>
-                           <div class="d-flex flex-column">
-                              <small>2021</small>
-                              <h6 class="mb-0">$41.2k</h6>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+            <h4 class="header-title m-t-0 m-b-30">Sales Analytics</h4>
+            <div class="widget-box-2">
+               <div class="widget-detail-2">
+                  <span class="badge badge-success pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
+                  <h2 class="m-b-0"> 8451 </h2>
+                  <p class="text-muted m-b-25">Revenue today</p>
                </div>
-            </div>
-         </div>
-         <!--/ Total Revenue -->
-         <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
-            <div class="row">
-               <div class="col-6 mb-4">
-                  <div class="card">
-                     <div class="card-body">
-                        <div
-                           class="card-title d-flex align-items-start justify-content-between"
-                           >
-                           <div class="avatar flex-shrink-0">
-                              <img
-                                 src="assets/admin/img/icons/unicons/paypal.png"
-                                 alt="Credit Card"
-                                 class="rounded"
-                                 />
-                           </div>
-                           <div class="dropdown">
-                              <button
-                                 class="btn p-0"
-                                 type="button"
-                                 id="cardOpt4"
-                                 data-bs-toggle="dropdown"
-                                 aria-haspopup="true"
-                                 aria-expanded="false"
-                                 >
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                              </button>
-                              <div
-                                 class="dropdown-menu dropdown-menu-end"
-                                 aria-labelledby="cardOpt4"
-                                 >
-                                 <a
-                                    class="dropdown-item"
-                                    href="javascript:void(0);"
-                                    >View More</a
-                                    >
-                                 <a
-                                    class="dropdown-item"
-                                    href="javascript:void(0);"
-                                    >Delete</a
-                                    >
-                              </div>
-                           </div>
-                        </div>
-                        <span class="d-block mb-1">Payments</span>
-                        <h3 class="card-title text-nowrap mb-2">$2,456</h3>
-                        <small class="text-danger fw-semibold"
-                           ><i class="bx bx-down-arrow-alt"></i> -14.82%</small
-                           >
-                     </div>
-                  </div>
-               </div>
-               <div class="col-6 mb-4">
-                  <div class="card">
-                     <div class="card-body pb-2">
-                        <span class="d-block fw-semibold mb-1">Revenue</span>
-                        <h3 class="card-title mb-1">425k</h3>
-                        <div id="revenueChart"></div>
-                     </div>
-                  </div>
-               </div>
-               <!-- </div>
-                  <div class="row"> -->
-               <div class="col-12 mb-4">
-                  <div class="card">
-                     <div class="card-body">
-                        <div
-                           class="d-flex justify-content-between flex-sm-row flex-column gap-3"
-                           >
-                           <div
-                              class="d-flex flex-sm-column flex-row align-items-start justify-content-between"
-                              >
-                              <div class="card-title">
-                                 <h5 class="text-nowrap mb-2">Profile Report</h5>
-                                 <span
-                                    class="badge bg-label-warning rounded-pill"
-                                    >Year 2021</span
-                                    >
-                              </div>
-                              <div class="mt-sm-auto">
-                                 <small
-                                    class="text-success text-nowrap fw-semibold"
-                                    ><i class="bx bx-chevron-up"></i> 68.2%</small
-                                    >
-                                 <h3 class="mb-0">$84,686k</h3>
-                              </div>
-                           </div>
-                           <div id="profileReportChart"></div>
-                        </div>
-                     </div>
+               <div class="progress progress-bar-success-alt progress-sm m-b-0">
+                  <div class="progress-bar progress-bar-success" role="progressbar"
+                     aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 77%;">
+                     <span class="sr-only">77% Complete</span>
                   </div>
                </div>
             </div>
          </div>
       </div>
-
+      <!-- end col -->
+      <div class="col-lg-3 col-md-6">
+         <div class="card-box">
+            <div class="dropdown pull-right">
+               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+               <i class="zmdi zmdi-more-vert"></i>
+               </a>
+               <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+               </ul>
+            </div>
+            <h4 class="header-title m-t-0 m-b-30">Statistics</h4>
+            <div class="widget-chart-1">
+               <div class="widget-chart-box-1">
+                  <input data-plugin="knob" data-width="80" data-height="80" data-fgColor="#ffbd4a"
+                     data-bgColor="#FFE6BA" value="80"
+                     data-skin="tron" data-angleOffset="180" data-readOnly=true
+                     data-thickness=".15"/>
+               </div>
+               <div class="widget-detail-1">
+                  <h2 class="p-t-10 m-b-0"> 4569 </h2>
+                  <p class="text-muted">Revenue today</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end col -->
+      <div class="col-lg-3 col-md-6">
+         <div class="card-box">
+            <div class="dropdown pull-right">
+               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+               <i class="zmdi zmdi-more-vert"></i>
+               </a>
+               <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+               </ul>
+            </div>
+            <h4 class="header-title m-t-0 m-b-30">Daily Sales</h4>
+            <div class="widget-box-2">
+               <div class="widget-detail-2">
+                  <span class="badge badge-pink pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
+                  <h2 class="m-b-0"> 158 </h2>
+                  <p class="text-muted m-b-25">Revenue today</p>
+               </div>
+               <div class="progress progress-bar-pink-alt progress-sm m-b-0">
+                  <div class="progress-bar progress-bar-pink" role="progressbar"
+                     aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 77%;">
+                     <span class="sr-only">77% Complete</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end col -->
+   </div>
+   <!-- end row -->
+   <div class="row">
+      <div class="col-lg-4">
+         <div class="card-box">
+            <div class="dropdown pull-right">
+               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+               <i class="zmdi zmdi-more-vert"></i>
+               </a>
+               <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+               </ul>
+            </div>
+            <h4 class="header-title m-t-0">Daily Sales</h4>
+            <div class="widget-chart text-center">
+               <div id="morris-donut-example"style="height: 245px;"></div>
+               <ul class="list-inline chart-detail-list m-b-0">
+                  <li>
+                     <h5 style="color: #ff8acc;"><i class="fa fa-circle m-r-5"></i>Series A</h5>
+                  </li>
+                  <li>
+                     <h5 style="color: #5b69bc;"><i class="fa fa-circle m-r-5"></i>Series B</h5>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!-- end col -->
+      <div class="col-lg-4">
+         <div class="card-box">
+            <div class="dropdown pull-right">
+               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+               <i class="zmdi zmdi-more-vert"></i>
+               </a>
+               <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+               </ul>
+            </div>
+            <h4 class="header-title m-t-0">Statistics</h4>
+            <div id="morris-bar-example" style="height: 280px;"></div>
+         </div>
+      </div>
+      <!-- end col -->
+      <div class="col-lg-4">
+         <div class="card-box">
+            <div class="dropdown pull-right">
+               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+               <i class="zmdi zmdi-more-vert"></i>
+               </a>
+               <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+               </ul>
+            </div>
+            <h4 class="header-title m-t-0">Total Revenue</h4>
+            <div id="morris-line-example" style="height: 280px;"></div>
+         </div>
+      </div>
+      <!-- end col -->
+   </div>
+</div>
+<!-- end col -->
+</div>
+</div> 
 @endsection
-
-@push('js')
-<script src="{{ asset('assets/admin/vendor/libs/apex-charts/apexcharts.js') }}"></script>
-@endpush

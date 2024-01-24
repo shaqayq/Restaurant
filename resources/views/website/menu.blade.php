@@ -58,7 +58,7 @@
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
 
           <div class="col-lg-6 menu-item filter-starters">
-            <img src="assets/admin/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
+            <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
             <div class="menu-content">
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Lobster Bisque</a><span>$5.95</span>
@@ -74,7 +74,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
-            <img src="assets/admin/img/menu/bread-barrel.jpg" class="menu-img" alt="">
+            <img src="assets/img/menu/bread-barrel.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Bread Barrel</a>
               <br><span><b>$6.95</b></span>
@@ -85,7 +85,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-starters">
-            <img src="assets/admin/img/menu/cake.jpg" class="menu-img" alt="">
+            <img src="assets/img/menu/cake.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Crab Cake</a><span>$7.95</span>
             </div>
@@ -95,7 +95,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-salads">
-            <img src="assets/admin/img/menu/caesar.jpg" class="menu-img" alt="">
+            <img src="assets/img/menu/caesar.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Caesar Selections</a><span>$8.95</span>
             </div>
@@ -105,7 +105,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
-            <img src="assets/admin/img/menu/tuscan-grilled.jpg" class="menu-img" alt="">
+            <img src="assets/img/menu/tuscan-grilled.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Tuscan Grilled</a><span>$9.95</span>
             </div>
@@ -115,7 +115,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-starters">
-            <img src="assets/admin/img/menu/mozzarella.jpg" class="menu-img" alt="">
+            <img src="assets/img/menu/mozzarella.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Mozzarella Stick</a><span>$4.95</span>
             </div>
@@ -125,7 +125,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-salads">
-            <img src="assets/admin/img/menu/greek-salad.jpg" class="menu-img" alt="">
+            <img src="assets/img/menu/greek-salad.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Greek Salad</a><span>$9.95</span>
             </div>
@@ -135,7 +135,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-salads">
-            <img src="assets/admin/img/menu/spinach-salad.jpg" class="menu-img" alt="">
+            <img src="assets/img/menu/spinach-salad.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Spinach Salad</a><span>$9.95</span>
             </div>
@@ -145,7 +145,7 @@
           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
-            <img src="assets/admin/img/menu/lobster-roll.jpg" class="menu-img" alt="">
+            <img src="assets/img/menu/lobster-roll.jpg" class="menu-img" alt="">
             <div class="menu-content" >
               <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Lobster Roll</a>
               <span>$12.95</span>
@@ -172,7 +172,7 @@
       </div>
       <div class="modal-body">
           <div class="items model-head">
-            <img src="assets/admin/img/menu/lobster-roll.jpg" class="menu-img" alt="">
+            <img src="assets/img/menu/lobster-roll.jpg" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Lobster Roll</a>
               <br><span id="price"><b>$6.95</b></span>

@@ -1,195 +1,147 @@
 @push('css')
-    <link
-      rel="stylesheet"
-      href="{{ asset('assets/admin/vendor/libs/datatables-bs5/datatables.bootstrap5.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ asset('assets/admin/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ asset('assets/admin/vendor/libs/select2/select2.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ asset('assets/admin/vendor/libs/formvalidation/dist/css/formValidation.min.css') }}"
-    />
+
+<link href="{{ asset('assets/admin/plugins/custombox/dist/custombox.min.css')}}" rel="stylesheet">
+<link href="{{ asset('assets/admin/plugins/switchery/switchery.min.css')}}" rel="stylesheet" />
+<link href="{{ asset('assets/admin/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/admin/plugins/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/admin/plugins/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/admin/plugins/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/admin/plugins/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 @endpush
+
+@push('scripts')
+<script src="{{ asset('assets/admin/plugins/switchery/switchery.min.js')}}"></script>
+@endpush
+
 @extends('admin.layouts.app')
 @section('content')
-<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">
-    Dashboard/</span> Driver
-</h4>
-<!-- Form -->
- <!-- Users List Table -->
-          <div class="card">
-                <div class="card-header border-bottom">
-                  <h5 class="card-title">Search Filter</h5>
-                  <div
-                    class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0"
-                  >
-                    <div class="col-md-4 user_role"></div>
-                    <div class="col-md-4 user_plan"></div>
-                    <div class="col-md-4 user_status"></div>
-                  </div>
-                </div>
-                <div class="card-datatable table-responsive">
-                  <table class="datatables-users table border-top">
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <th>Full Name</th>
-                        <th>Phone</th>
-                        <th>Car_ID</th>
-                        <th>Billing</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                  </table>
-                </div>
-                <!-- Offcanvas to add new user -->
-                <div
-                  class="offcanvas offcanvas-end"
-                  tabindex="-1"
-                  id="offcanvasAddUser"
-                  aria-labelledby="offcanvasAddUserLabel"
-                >
-                  <div class="offcanvas-header">
-                    <h5 id="offcanvasAddUserLabel" class="offcanvas-title">
-                      Add Driver
-                    </h5>
-                    <button
-                      type="button"
-                      class="btn-close text-reset"
-                      data-bs-dismiss="offcanvas"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="offcanvas-body mx-0 flex-grow-0">
-                    <form
-                      class="add-new-user pt-0"
-                      id="addNewUserForm"
-                      onsubmit="return false"
-                    >
-                      <div class="mb-3">
-                        <label class="form-label" for="add-user-fullname"
-                          >Full Name</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="add-user-fullname"
-                          placeholder="John Doe"
-                          name="userFullname"
-                          aria-label="John Doe"
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label class="form-label" for="add-user-email"
-                          >Email</label
-                        >
-                        <input
-                          type="text"
-                          id="add-user-email"
-                          class="form-control"
-                          placeholder="john.doe@example.com"
-                          aria-label="john.doe@example.com"
-                          name="userEmail"
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label class="form-label" for="add-user-contact"
-                          >Contact</label
-                        >
-                        <input
-                          type="text"
-                          id="add-user-contact"
-                          class="form-control phone-mask"
-                          placeholder="+1 (609) 988-44-11"
-                          aria-label="john.doe@example.com"
-                          name="userContact"
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label class="form-label" for="add-user-company"
-                          >Company</label
-                        >
-                        <input
-                          type="text"
-                          id="add-user-company"
-                          class="form-control"
-                          placeholder="Web Developer"
-                          aria-label="jdoe1"
-                          name="companyName"
-                        />
-                      </div>
-                     
-                      <div class="mb-3">
-                        <label class="form-label" for="user-role"
-                          >User Role</label
-                        >
-                        <select id="user-role" class="form-select">
-                          <option value="subscriber">Subscriber</option>
-                          <option value="editor">Editor</option>
-                          <option value="maintainer">Maintainer</option>
-                          <option value="author">Author</option>
-                          <option value="admin">Admin</option>
-                        </select>
-                      </div>
-                      <div class="mb-4">
-                        <label class="form-label" for="user-plan"
-                          >Select Plan</label
-                        >
-                        <select id="user-plan" class="form-select">
-                          <option value="basic">Basic</option>
-                          <option value="enterprise">Enterprise</option>
-                          <option value="company">Company</option>
-                          <option value="team">Team</option>
-                        </select>
-                      </div>
-                      <button
-                        type="submit"
-                        class="btn btn-primary me-sm-3 me-1 data-submit"
-                      >
-                        Submit
-                      </button>
-                      <button
-                        type="reset"
-                        class="btn btn-label-secondary"
-                        data-bs-dismiss="offcanvas"
-                      >
-                        Cancel
-                      </button>
+<style>
+   .tbl-header{
+   display: flex;
+   justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 2%;
+   }
+</style>
+
+<div class="row">
+   <div class="col-sm-12">
+      <div class="card-box table-responsive">
+         <div class="row">
+           <div class="tbl-header">
+           <h4 class="header-title m-t-0 m-b-3">Driver List</h4>   
+            <div class="col-sm-6 text-right">
+               <div class="m-b-3">
+                  <a href="#custom-modal" class="btn btn-primary waves-effect waves-light"
+                     data-animation="fadein" data-plugin="custommodal" data-overlaySpeed="200" data-overlayColor="#36404a">
+                  <i class="zmdi zmdi-plus"></i> Add Driver
+                  </a>
+               </div>
+            </div>
+           </div>
+         </div>
+        
+         <table id="datatable-buttons" class="table table-striped table-bordered">
+            <thead>
+               <tr>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Status</th>
+                  <th>Action</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Tiger Nixon</td>
+                  <td>System Architect</td>
+                  <td>Edinburgh</td>
+                  <td>61</td>
+                  
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+   <!-- end col -->
+</div>
+<!-- Model -->
+<div id="custom-modal" class="modal-demo">
+			    <button type="button" class="close" onclick="Custombox.close();">
+			        <span>&times;</span><span class="sr-only">Close</span>
+			    </button>
+			    <h4 class="custom-modal-title">Add New Driver</h4>
+			    <div class="custom-modal-text text-left">
+			        <form role="form">
+			        	<div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="assign">Phone</label>
+                                    <input type="text" class="form-control" id="assign" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="priority">Is Available</label>
+                                    <div class="form-check form-switch">
+                                    <input type="checkbox" checked data-plugin="switchery" data-color="#00b19d" data-size="small"/>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                      
+
+                        <button type="submit" class="btn btn-success waves-effect waves-light">Save</button>
+                        
                     </form>
-                  </div>
-                </div>
-              </div>
+			    </div>
+			</div>
+
 @endsection
 
 @push('js')
-<script src="{{ asset('assets/admin/vendor/libs/moment/moment.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/datatables/jquery.dataTables.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/datatables-bs5/datatables-bootstrap5.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/datatables-responsive/datatables.responsive.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/datatables-buttons/datatables-buttons.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/jszip/jszip.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/pdfmake/pdfmake.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/datatables-buttons/buttons.html5.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/datatables-buttons/buttons.print.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/select2/select2.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/formvalidation/dist/js/FormValidation.min.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/cleavejs/cleave.js') }}"></script>
-<script src="{{ asset('assets/admin/vendor/libs/cleavejs/cleave-phone.js') }}"></script>
-<script src="{{ asset('assets/admin/js/app-user-list.js') }}"></script>
-<script>
-$.fn.dataTable.ext.errMode = 'throw';
-</script>
+
+
+<script src="{{ asset('assets/admin/plugins/custombox/dist/custombox.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/custombox/dist/legacy.min.js')}}"></script>
+<script src="{{ asset('assets/admin/plugins/custombox/dist/legacy.min.js')}}"></script>
+
+<script src="{{ asset('assets/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/buttons.bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/jszip.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/pdfmake.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/vfs_fonts.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/buttons.print.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/dataTables.fixedHeader.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/dataTables.keyTable.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/responsive.bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/dataTables.scroller.min.js') }}"></script>
+<script src="{{ asset('assets/admin/pages/datatables.init.js') }}"></script>
+
+<script type="text/javascript">
+            $(document).ready(function() {
+                $('#datatable').dataTable();
+                $('#datatable-keytable').DataTable( { keys: true } );
+                $('#datatable-responsive').DataTable();
+                $('#datatable-scroller').DataTable( { ajax: "assets/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true } );
+                var table = $('#datatable-fixed-header').DataTable( { fixedHeader: true } );
+            } );
+            TableManageButtons.init();
+
+        </script>
+
 
 
 @endpush

@@ -1,123 +1,114 @@
-<aside
-          id="layout-menu"
-          class="layout-menu menu-vertical menu bg-menu-theme"
-        >
-          <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
-              
-              <span class="app-brand-text demo menu-text fw-bolder ms-2"
-                >Namak</span
-              >
-            </a>
+<div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">  
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <ul>
+                            <li>
+                                <a href="index-2.html" class="waves-effect active"><i class="zmdi zmdi-view-dashboard"></i>
+                                 <span> Dashboard</span> </a>
+                            </li>
 
-            <a
-              href="javascript:void(0);"
-              class="layout-menu-toggle menu-link text-large ms-auto"
-            >
-              <i class="bx bx-chevron-left bx-sm align-middle"></i>
-            </a>
-          </div>
+                            <li>
+                                <a href="/driver" class="waves-effect"><i class="fa fa-car"></i>
+                                 <span> Driver </span> </a>
+                            </li>
 
-          <div class="menu-inner-shadow"></div>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect">
+                                    <i class="fa fa-list"></i> 
+                                    <span> Orders </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="/deliverdOrder">Delivered</a></li>
+                                    <li><a href="/inProgressOrder">In Progress</a></li>
+                              
+                                </ul>
+                            </li>
 
-          <ul class="menu-inner py-1">
-            <!-- Dashboards -->
-            <li class="menu-item active open">
-              <a href="/adminPanel" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Dashboards">Dashboards</div>
-              </a>
-              
-            </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect">
+                                    <i class="zmdi zmdi-collection-text"></i>
+                                    <span class="label label-warning pull-right">7</span><span> Forms </span> </a>
+                                <ul class="list-unstyled">
+                                    <li><a href="form-elements.html">General Elements</a></li>
+                                    <li><a href="form-advanced.html">Advanced Form</a></li>
+                                    <li><a href="form-validation.html">Form Validation</a></li>
+                                    <li><a href="form-wizard.html">Form Wizard</a></li>
+                                    <li><a href="form-fileupload.html">Form Uploads</a></li>
+                                    <li><a href="form-wysiwig.html">Wysiwig Editors</a></li>
+                                    <li><a href="form-xeditable.html">X-editable</a></li>
+                                </ul>
+                            </li>
 
-            <!-- website -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Website</div>
-              </a>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-view-list"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                	<li><a href="tables-basic.html">Basic Tables</a></li>
+                                    <li><a href="tables-datatable.html">Data Table</a></li>
+                                    <li><a href="tables-responsive.html">Responsive Table</a></li>
+                                    <li><a href="tables-editable.html">Editable Table</a></li>
+                                </ul>
+                            </li>
 
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="layouts-collapsed-menu.html" class="menu-link">
-                    <div data-i18n="Collapsed menu">Menus</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-content-navbar.html" class="menu-link">
-                    <div data-i18n="Content navbar">Specialits</div>
-                  </a>
-                </li>
-              
-              </ul>
-              
-            </li>
-          
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-chart"></i><span> Charts </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="chart-flot.html">Flot Chart</a></li>
+                                    <li><a href="chart-morris.html">Morris Chart</a></li>
+                                    <li><a href="chart-chartist.html">Chartist Charts</a></li>
+                                    <li><a href="chart-chartjs.html">Chartjs Chart</a></li>
+                                    <li><a href="chart-other.html">Other Chart</a></li>
+                                </ul>
+                            </li>
 
-            <!-- Drivers -->
-            <li class="menu-item">
-              <a href="/driver" class="menu-link">
-                <i class="menu-icon tf-icons fa-solid fa-car"></i>
-                <div data-i18n="Roles & Permissions">Drivers</div>
-              </a>
-            </li>
-            <!-- Orders -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Orders</div>
-              </a>
+                            <li>
+                                <a href="calendar.html" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Calendar </span></a>
+                            </li>
 
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="layouts-collapsed-menu.html" class="menu-link">
-                    <div data-i18n="Collapsed menu">Deliverd</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-content-navbar.html" class="menu-link">
-                    <div data-i18n="Content navbar">In progrese</div>
-                  </a>
-                </li>
-              
-              </ul>
-              
-            </li>
-            <!-- Event -->
-            <li class="menu-item">
-              <a href="app-calendar.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-calendar"></i>
-                <div data-i18n="Calendar">Calender</div>
-              </a>
-            </li>
+                            <li>
+                                <a href="inbox.html" class="waves-effect"><i class="zmdi zmdi-email"></i><span class="label label-purple pull-right">New</span><span> Mail </span></a>
+                            </li>
 
-            <!-- filter -->
-            <li class="menu-item">
-            <a href="maps-leaflet.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-map-alt"></i>
-                <div data-i18n="Extended UI">Filter</div>
-              </a>
-            </li>
-              <!-- user -->
-              <li class="menu-item">
-                  <a href="layouts-content-navbar.html" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-user"></i>
-                  <div data-i18n="Users">Users</div>
-                  </a>
-             </li>
-               <!-- logiut -->
-               <li class="menu-item">
-                  <a href="layouts-content-navbar.html" class="menu-link">
-                
-                  <i class="menu-icon tf-icons fa-solid fa-right-from-bracket"></i>
-                  <div data-i18n="Users">Logout</div>
-                  </a>
-             </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-collection-item"></i><span> Pages </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="page-starter.html">Starter Page</a></li>
+                                    <li><a href="page-login.html">Login</a></li>
+                                    <li><a href="page-register.html">Register</a></li>
+                                    <li><a href="page-recoverpw.html">Recover Password</a></li>
+                                    <li><a href="page-lock-screen.html">Lock Screen</a></li>
+                                    <li><a href="page-confirm-mail.html">Confirm Mail</a></li>
+                                    <li><a href="page-404.html">Error 404</a></li>
+                                    <li><a href="page-500.html">Error 500</a></li>
+                                </ul>
+                            </li>
 
-           
-            
-            
-            
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Extra Pages </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="extras-projects.html">Projects</a></li>
+                                    <li><a href="extras-tour.html">Tour</a></li>
+                                    <li><a href="extras-taskboard.html">Taskboard</a></li>
+                                    <li><a href="extras-taskdetail.html">Task Detail</a></li>
+                                    <li><a href="extras-profile.html">Profile</a></li>
+                                    <li><a href="extras-maps.html">Maps</a></li>
+                                    <li><a href="extras-contact.html">Contact list</a></li>
+                                    <li><a href="extras-pricing.html">Pricing</a></li>
+                                    <li><a href="extras-timeline.html">Timeline</a></li>
+                                    <li><a href="extras-invoice.html">Invoice</a></li>
+                                    <li><a href="extras-faq.html">FAQ</a></li>
+                                    <li><a href="extras-gallery.html">Gallery</a></li>
+                                    <li><a href="extras-email-template.html">Email template</a></li>
+                                    <li><a href="extras-maintenance.html">Maintenance</a></li>
+                                    <li><a href="extras-comingsoon.html">Coming soon</a></li>
+                                </ul>
+                            </li>
 
-          </ul>
-        </aside>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- Sidebar -->
+                    <div class="clearfix"></div>
+
+                </div>
+
+            </div>
