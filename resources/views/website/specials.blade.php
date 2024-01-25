@@ -1,4 +1,4 @@
-<section id="specials" class="specials">
+<section id="specials" class="specials bg-black">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">

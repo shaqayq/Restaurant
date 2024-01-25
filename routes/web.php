@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DriverController;
+use App\Http\Controllers\menuController;
+use App\Http\Controllers\deliverdOrderController;
+use App\Http\Controllers\inProgressOrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +19,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('website.home');
 });
+
+Route::get('/adminPanel', function () {
+    return view('admin.homePage');
+});
+Route::resource('/driver', DriverController::class);
+Route::resource('/menu', menuController::class);
+Route::resource('/deliverdOrder', deliverdOrderController::class);
+Route::resource('/inProgressOrder', inProgressOrderController::class);
+
+// routes/web.php
+
+Route::get('/open-popup', 'PopupController@openPopup')->name('open.popup');
+
