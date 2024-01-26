@@ -5,6 +5,10 @@ use App\Http\Controllers\DriverController;
 use App\Http\Controllers\menuController;
 use App\Http\Controllers\deliverdOrderController;
 use App\Http\Controllers\inProgressOrderController;
+use App\Http\Controllers\userController;
+use App\Http\Controllers\loginController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +31,8 @@ Route::resource('/driver', DriverController::class);
 Route::resource('/menu', menuController::class);
 Route::resource('/deliverdOrder', deliverdOrderController::class);
 Route::resource('/inProgressOrder', inProgressOrderController::class);
+Route::resource('/user', userController::class);
+Route::resource('/login', loginController::class);
 
 // routes/web.php
 

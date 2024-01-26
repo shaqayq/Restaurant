@@ -37,13 +37,13 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-globe"></i>
                                  <span> Website </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                	<li><a href="tables-basic.html">Menu</a></li>
-                                    <li><a href="tables-datatable.html">Specialt</a></li>
+                                	<li><a href="/menu">Menu</a></li>
+                                   
                 
                                 </ul>
                             </li>
                             <li>
-                                <a href="/logout" class="waves-effect"><i class="fa fa-sign-out"></i>
+                                <a href="/login" class="waves-effect"><i class="fa fa-sign-out"></i>
                                  <span> Logout </span> </a>
                             </li>
                       
