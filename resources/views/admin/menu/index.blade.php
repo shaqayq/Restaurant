@@ -86,7 +86,7 @@
 			    </button>
 			    <h4 class="custom-modal-title">Add New Item</h4>
 			    <div class="custom-modal-text text-left">
-			        <form role="form">
+			        <form role="form" method="POST" action="{{}}">
                     <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">

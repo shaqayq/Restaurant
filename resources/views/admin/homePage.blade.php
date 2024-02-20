@@ -1,204 +1,278 @@
 @extends('admin.layouts.app')
 @section('content')
-<div class="container">
-   <div class="row">
-      <div class="col-lg-3 col-md-6">
-         <div class="card-box">
-            <div class="dropdown pull-right">
-               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-               <i class="zmdi zmdi-more-vert"></i>
-               </a>
-               <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-               </ul>
-            </div>
-            <h4 class="header-title m-t-0 m-b-30">Total Revenue</h4>
-            <div class="widget-chart-1">
-               <div class="widget-chart-box-1">
-                  <input data-plugin="knob" data-width="80" data-height="80" data-fgColor="#f05050 "
-                     data-bgColor="#F9B9B9" value="58"
-                     data-skin="tron" data-angleOffset="180" data-readOnly=true
-                     data-thickness=".15"/>
-               </div>
-               <div class="widget-detail-1">
-                  <h2 class="p-t-10 m-b-0"> 256 </h2>
-                  <p class="text-muted">Revenue today</p>
+
+<div class="page-title">
+      <h3>Dashboard</h3>
+      <p class="text-subtitle text-muted">A good dashboard to display your statistics</p>
+   </div>
+   <section class="section">
+      <div class="row mb-2">
+         <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+               <div class="card-body p-0">
+                  <div class="d-flex flex-column">
+                     <div class='px-3 py-3 d-flex justify-content-between'>
+                        <h3 class='card-title'>BALANCE</h3>
+                        <div class="card-right d-flex align-items-center">
+                           <p>$50 </p>
+                        </div>
+                     </div>
+                     <div class="chart-wrapper">
+                        <canvas id="canvas1" style="height:100px !important"></canvas>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
-      </div>
-      <!-- end col -->
-      <div class="col-lg-3 col-md-6">
-         <div class="card-box">
-            <div class="dropdown pull-right">
-               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-               <i class="zmdi zmdi-more-vert"></i>
-               </a>
-               <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-               </ul>
-            </div>
-            <h4 class="header-title m-t-0 m-b-30">Sales Analytics</h4>
-            <div class="widget-box-2">
-               <div class="widget-detail-2">
-                  <span class="badge badge-success pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
-                  <h2 class="m-b-0"> 8451 </h2>
-                  <p class="text-muted m-b-25">Revenue today</p>
+         <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+               <div class="card-body p-0">
+                  <div class="d-flex flex-column">
+                     <div class='px-3 py-3 d-flex justify-content-between'>
+                        <h3 class='card-title'>Revenue</h3>
+                        <div class="card-right d-flex align-items-center">
+                           <p>$532,2 </p>
+                        </div>
+                     </div>
+                     <div class="chart-wrapper">
+                        <canvas id="canvas2" style="height:100px !important"></canvas>
+                     </div>
+                  </div>
                </div>
-               <div class="progress progress-bar-success-alt progress-sm m-b-0">
-                  <div class="progress-bar progress-bar-success" role="progressbar"
-                     aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
-                     style="width: 77%;">
-                     <span class="sr-only">77% Complete</span>
+            </div>
+         </div>
+         <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+               <div class="card-body p-0">
+                  <div class="d-flex flex-column">
+                     <div class='px-3 py-3 d-flex justify-content-between'>
+                        <h3 class='card-title'>ORDERS</h3>
+                        <div class="card-right d-flex align-items-center">
+                           <p>1,544 </p>
+                        </div>
+                     </div>
+                     <div class="chart-wrapper">
+                        <canvas id="canvas3" style="height:100px !important"></canvas>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-12 col-md-3">
+            <div class="card card-statistic">
+               <div class="card-body p-0">
+                  <div class="d-flex flex-column">
+                     <div class='px-3 py-3 d-flex justify-content-between'>
+                        <h3 class='card-title'>Sales Today</h3>
+                        <div class="card-right d-flex align-items-center">
+                           <p>423 </p>
+                        </div>
+                     </div>
+                     <div class="chart-wrapper">
+                        <canvas id="canvas4" style="height:100px !important"></canvas>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- end col -->
-      <div class="col-lg-3 col-md-6">
-         <div class="card-box">
-            <div class="dropdown pull-right">
-               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-               <i class="zmdi zmdi-more-vert"></i>
-               </a>
-               <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-               </ul>
-            </div>
-            <h4 class="header-title m-t-0 m-b-30">Statistics</h4>
-            <div class="widget-chart-1">
-               <div class="widget-chart-box-1">
-                  <input data-plugin="knob" data-width="80" data-height="80" data-fgColor="#ffbd4a"
-                     data-bgColor="#FFE6BA" value="80"
-                     data-skin="tron" data-angleOffset="180" data-readOnly=true
-                     data-thickness=".15"/>
+      <div class="row mb-4">
+         <div class="col-md-8">
+            <div class="card">
+               <div class="card-header">
+                  <h3 class='card-heading p-1 pl-3'>Sales</h3>
                </div>
-               <div class="widget-detail-1">
-                  <h2 class="p-t-10 m-b-0"> 4569 </h2>
-                  <p class="text-muted">Revenue today</p>
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col-md-4 col-12">
+                        <div class="pl-3">
+                           <h1 class='mt-5'>$21,102</h1>
+                           <p class='text-xs'><span class="text-green"><i data-feather="bar-chart" width="15"></i> +19%</span> than last month</p>
+                           <div class="legends">
+                              <div class="legend d-flex flex-row align-items-center">
+                                 <div class='w-3 h-3 rounded-full bg-info me-2'></div>
+                                 <span class='text-xs'>Last Month</span>
+                              </div>
+                              <div class="legend d-flex flex-row align-items-center">
+                                 <div class='w-3 h-3 rounded-full bg-blue me-2'></div>
+                                 <span class='text-xs'>Current Month</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-8 col-12">
+                        <canvas id="bar"></canvas>
+                     </div>
+                  </div>
                </div>
             </div>
-         </div>
-      </div>
-      <!-- end col -->
-      <div class="col-lg-3 col-md-6">
-         <div class="card-box">
-            <div class="dropdown pull-right">
-               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-               <i class="zmdi zmdi-more-vert"></i>
-               </a>
-               <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-               </ul>
-            </div>
-            <h4 class="header-title m-t-0 m-b-30">Daily Sales</h4>
-            <div class="widget-box-2">
-               <div class="widget-detail-2">
-                  <span class="badge badge-pink pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
-                  <h2 class="m-b-0"> 158 </h2>
-                  <p class="text-muted m-b-25">Revenue today</p>
+            <div class="card">
+               <div class="card-header d-flex justify-content-between align-items-center">
+                  <h4 class="card-title">Orders Today</h4>
+                  <div class="d-flex ">
+                     <i data-feather="download"></i>
+                  </div>
                </div>
-               <div class="progress progress-bar-pink-alt progress-sm m-b-0">
-                  <div class="progress-bar progress-bar-pink" role="progressbar"
-                     aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
-                     style="width: 77%;">
-                     <span class="sr-only">77% Complete</span>
+               <div class="card-body px-0 pb-0">
+                  <div class="table-responsive">
+                     <table class='table mb-0' id="table1">
+                        <thead>
+                           <tr>
+                              <th>Name</th>
+                              <th>Email</th>
+                              <th>Phone</th>
+                              <th>City</th>
+                              <th>Status</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>Graiden</td>
+                              <td>vehicula.aliquet@semconsequat.co.uk</td>
+                              <td>076 4820 8838</td>
+                              <td>Offenburg</td>
+                              <td>
+                                 <span class="badge bg-success">Active</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Dale</td>
+                              <td>fringilla.euismod.enim@quam.ca</td>
+                              <td>0500 527693</td>
+                              <td>New Quay</td>
+                              <td>
+                                 <span class="badge bg-success">Active</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Nathaniel</td>
+                              <td>mi.Duis@diam.edu</td>
+                              <td>(012165) 76278</td>
+                              <td>Grumo Appula</td>
+                              <td>
+                                 <span class="badge bg-danger">Inactive</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Darius</td>
+                              <td>velit@nec.com</td>
+                              <td>0309 690 7871</td>
+                              <td>Ways</td>
+                              <td>
+                                 <span class="badge bg-success">Active</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Ganteng</td>
+                              <td>velit@nec.com</td>
+                              <td>0309 690 7871</td>
+                              <td>Ways</td>
+                              <td>
+                                 <span class="badge bg-success">Active</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Oleg</td>
+                              <td>rhoncus.id@Aliquamauctorvelit.net</td>
+                              <td>0500 441046</td>
+                              <td>Rossignol</td>
+                              <td>
+                                 <span class="badge bg-success">Active</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>Kermit</td>
+                              <td>diam.Sed.diam@anteVivamusnon.org</td>
+                              <td>(01653) 27844</td>
+                              <td>Patna</td>
+                              <td>
+                                 <span class="badge bg-success">Active</span>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
                   </div>
                </div>
             </div>
          </div>
-      </div>
-      <!-- end col -->
-   </div>
-   <!-- end row -->
-   <div class="row">
-      <div class="col-lg-4">
-         <div class="card-box">
-            <div class="dropdown pull-right">
-               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-               <i class="zmdi zmdi-more-vert"></i>
-               </a>
-               <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-               </ul>
+         <div class="col-md-4">
+            <div class="card ">
+               <div class="card-header">
+                  <h4>Your Earnings</h4>
+               </div>
+               <div class="card-body">
+                  <div id="radialBars"></div>
+                  <div class="text-center mb-5">
+                     <h6>From last month</h6>
+                     <h1 class='text-green'>+$2,134</h1>
+                  </div>
+               </div>
             </div>
-            <h4 class="header-title m-t-0">Daily Sales</h4>
-            <div class="widget-chart text-center">
-               <div id="morris-donut-example"style="height: 245px;"></div>
-               <ul class="list-inline chart-detail-list m-b-0">
-                  <li>
-                     <h5 style="color: #ff8acc;"><i class="fa fa-circle m-r-5"></i>Series A</h5>
-                  </li>
-                  <li>
-                     <h5 style="color: #5b69bc;"><i class="fa fa-circle m-r-5"></i>Series B</h5>
-                  </li>
-               </ul>
+            <div class="card widget-todo">
+               <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+                  <h4 class="card-title d-flex">
+                     <i class='bx bx-check font-medium-5 pl-25 pr-75'></i>Progress
+                  </h4>
+               </div>
+               <div class="card-body px-0 py-1">
+                  <table class='table table-borderless'>
+                     <tr>
+                        <td class='col-3'>UI Design</td>
+                        <td class='col-6'>
+                           <div class="progress progress-info">
+                              <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="0"
+                                 aria-valuemin="0" aria-valuemax="100"></div>
+                           </div>
+                        </td>
+                        <td class='col-3 text-center'>60%</td>
+                     </tr>
+                     <tr>
+                        <td class='col-3'>VueJS</td>
+                        <td class='col-6'>
+                           <div class="progress progress-success">
+                              <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="0"
+                                 aria-valuemin="0" aria-valuemax="100"></div>
+                           </div>
+                        </td>
+                        <td class='col-3 text-center'>30%</td>
+                     </tr>
+                     <tr>
+                        <td class='col-3'>Laravel</td>
+                        <td class='col-6'>
+                           <div class="progress progress-danger">
+                              <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="0"
+                                 aria-valuemin="0" aria-valuemax="100"></div>
+                           </div>
+                        </td>
+                        <td class='col-3 text-center'>50%</td>
+                     </tr>
+                     <tr>
+                        <td class='col-3'>ReactJS</td>
+                        <td class='col-6'>
+                           <div class="progress progress-primary">
+                              <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="0"
+                                 aria-valuemin="0" aria-valuemax="100"></div>
+                           </div>
+                        </td>
+                        <td class='col-3 text-center'>80%</td>
+                     </tr>
+                     <tr>
+                        <td class='col-3'>Go</td>
+                        <td class='col-6'>
+                           <div class="progress progress-secondary">
+                              <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="0"
+                                 aria-valuemin="0" aria-valuemax="100"></div>
+                           </div>
+                        </td>
+                        <td class='col-3 text-center'>65%</td>
+                     </tr>
+                  </table>
+               </div>
             </div>
          </div>
       </div>
-      <!-- end col -->
-      <div class="col-lg-4">
-         <div class="card-box">
-            <div class="dropdown pull-right">
-               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-               <i class="zmdi zmdi-more-vert"></i>
-               </a>
-               <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-               </ul>
-            </div>
-            <h4 class="header-title m-t-0">Statistics</h4>
-            <div id="morris-bar-example" style="height: 280px;"></div>
-         </div>
-      </div>
-      <!-- end col -->
-      <div class="col-lg-4">
-         <div class="card-box">
-            <div class="dropdown pull-right">
-               <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-               <i class="zmdi zmdi-more-vert"></i>
-               </a>
-               <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-               </ul>
-            </div>
-            <h4 class="header-title m-t-0">Total Revenue</h4>
-            <div id="morris-line-example" style="height: 280px;"></div>
-         </div>
-      </div>
-      <!-- end col -->
-   </div>
-</div>
-<!-- end col -->
-</div>
-</div> 
+   </section>
+
+
+
 @endsection

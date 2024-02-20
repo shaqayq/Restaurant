@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class menuController extends Controller
 {
+    protected $database;
+
+    public function __construct()
+    {
+        $this->database = app('firebase.database');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -27,7 +33,7 @@ class menuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

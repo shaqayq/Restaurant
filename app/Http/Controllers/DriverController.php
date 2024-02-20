@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Kreait\Firebase\Contract\Database;
 
 class DriverController extends Controller
 {
+    public function __construct(Database $database)
+    {
+        $database = app('firebase.database');
+        $this->database = $database;
+        $this->tablename = 'drivers';
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.driver.driverList');
+       
+        $snapshot = $this->database->getReference($this->tablename)->getSnapshot();
+        $drivers = $snapshot->getValue();
+        return view('admin.driver.driverList', compact('drivers'));
+        
     }
 
     /**
@@ -27,7 +38,23 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $status = $request->status  ? true : false;
+
+        $data =[
+            'name' => $request->fullname,
+            'phone' => $request->phone,
+            'status' => $status
+        ];
+        $postRef=  $this->database->getReference($this->tablename)->push($data);
+        if($postRef){
+         
+            return redirect('/driver')->with('success', 'Driver added successfully');
+
+        }else{
+
+            return redirect('/driver')->with('error', 'Driver not added');
+        }
+        
     }
 
     /**
@@ -35,7 +62,7 @@ class DriverController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
     /**
@@ -43,7 +70,9 @@ class DriverController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $driver = $this->database->getReference($this->tablename)->getChild($id)->getValue();
+        return response()->json($driver);
+        
     }
 
     /**
@@ -51,7 +80,19 @@ class DriverController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $status = $request->status  ? true : false;
+
+        $data =[
+            'name' => $request->fullname,
+            'phone' => $request->phone,
+            'status' => $status
+        ];
+        $updateData = $this->database->getReference($this->tablename)->getChild($id)->update($data);
+        if($updateData){
+            return redirect('/driver')->with('success', 'Driver updated successfully');
+        }else{
+            return redirect('/driver')->with('error', 'Driver not updated');
+        }
     }
 
     /**
@@ -59,6 +100,11 @@ class DriverController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deleteData = $this->database->getReference($this->tablename)->getChild($id)->remove();
+        if($deleteData){
+            return redirect('/driver')->with('success', 'Driver deleted successfully');
+        }else{
+            return redirect('/driver')->with('error', 'Driver not deleted');
+        }
     }
 }
